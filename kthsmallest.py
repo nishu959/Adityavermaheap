@@ -16,6 +16,6 @@ heapify(t)
 
 for i in a:
   heappush(t, -1*i)
-  if len(t)>3:
+  if len(t)>k:
     heappop(t) 
 print(t[0] * -1)
