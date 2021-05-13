@@ -1,5 +1,5 @@
 a = list(map(int, input().split()))
-k = int(input())
+
 h = {}
 for i in a:
   if i in h:
@@ -11,10 +11,16 @@ from heapq import heappop, heappush, heapify
 t = []
 heapify(t)
 for i in h:
-  heappush(t, (h[i], i))
-  if len(t)>k:
-    heappop(t)
+  heappush(t, (-1*h[i], i))
+  
 
 
-for i, j in t:
-  print(j, end= " ")
+
+while(len(t)>0):
+  g =list(heappop(t)) 
+  while g[0]!=0:
+    print(g[1], end = " ")
+    g[0] = g[0] +1
+  
+  
+ 
