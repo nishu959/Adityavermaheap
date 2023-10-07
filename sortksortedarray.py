@@ -10,5 +10,6 @@ for i in a:
   heappush(t, i)
   if len(t)>k:
     print(heappop(t),end = " ")  
-   
-print(*t)
+
+while t:   
+    print(heappop(t), end= " ")
