@@ -1,0 +1,29 @@
+from heapq import heappop, heappush, heapify
+
+class pair:
+    def __init__(self, diff , val):
+        self.diff = diff
+        self.val = val 
+        
+    def __lt__(self, other):
+        if self.diff == other.diff:
+            return self.val < other.val
+        return self.diff < other.diff
+
+a = [1,2,3,4,5,6,7,8,9]
+k = 5
+x = 4
+
+#how to push pair in heap
+#heappush(h, (7, 'release product'))
+t = [] 
+heapify(t)
+for i in a:
+  heappush(t, pair(-1*abs(x-i),i)) 
+  if len(t)>k:
+    heappop(t)
+    
+
+while t:
+    l = heappop(t)
+    print(l.val, end=" ")
